@@ -5,45 +5,17 @@ Install `generator-angular-fullstack`:
 npm install -g generator-angular-fullstack
 ```
 
+Run `npm install` for downloading node packages, `bower install` for downloading bower packages.
+
+Start MongoDb!
+
 Run `grunt` for building, `grunt serve` for preview, and `grunt serve:dist` for a preview of the built app.
 
-## Prerequisites
-
-* MongoDB - Download and Install [MongoDB](http://www.mongodb.org/downloads) - If you plan on scaffolding your project with mongoose, you'll need mongoDB to be installed and have the `mongod` process running.
-
-## Supported Configurations
-
-**Client**
-
-* Scripts: `JavaScript`, `CoffeeScript`
-* Markup:  `HTML`, `Jade`
-* Stylesheets: `CSS`, `Stylus`, `Sass`, `Less`,
-* Angular Routers: `ngRoute`, `ui-router`
-
-**Server**
-
-* Database: `None`, `MongoDB`
-* Authentication boilerplate: `Yes`, `No`
-* oAuth integrations: `Facebook` `Twitter` `Google`
-* Socket.io integration: `Yes`, `No`
-
-## Injection
-
-A grunt task looks for new files in your `client/app` and `client/components` folder and automatically injects them in the appropriate places based on an injection block.
-
-* `less` files into `client/app.less`
-* `scss` files into `client/app.scss`
-* `stylus` files into `client/app.styl`
-* `css` files into `client/index.html`
-* `js` files into `client/index.html`
-* `coffeescript` temp `js` files into `client/index.html`
 
 ## Generators
 
 Available generators:
 
-* App
-    - [angular-fullstack](#app) (aka [angular-fullstack:app](#app))
 * Server Side
     - [angular-fullstack:endpoint](#endpoint)
 * Client Side
@@ -58,14 +30,6 @@ Available generators:
 * Deployment
     - [angular-fullstack:openshift](#openshift)
     - [angular-fullstack:heroku](#heroku)
-
-### App
-Sets up a new AngularJS + Express app, generating all the boilerplate you need to get started.
-
-Example:
-```bash
-yo angular-fullstack
-```
 
 ### Endpoint
 Generates a new API endpoint.
