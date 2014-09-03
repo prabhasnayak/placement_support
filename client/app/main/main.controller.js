@@ -2,21 +2,27 @@
 
 angular.module('collegeApp')
   .controller('MainCtrl', function ($scope, $http) {
-    $scope.awesomeThings = [];
+    $scope.companies = [];
 
-    $http.get('/api/things').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
-    });
-
-    $scope.addThing = function() {
-      if($scope.newThing === '') {
+    $scope.addCompany = function() {
+      if($scope.newCompany === '') {
         return;
       }
-      $http.post('/api/things', { name: $scope.newThing });
-      $scope.newThing = '';
+      $http.post('/api/companies', { name: $scope.newCompany });
+      $scope.newCompany = '';
+      $scope.getCompanies();
     };
 
-    $scope.deleteThing = function(thing) {
-      $http.delete('/api/things/' + thing._id);
+    $scope.deleteCompany = function(company) {
+      $http.delete('/api/companies/' + company._id);
+      $scope.getCompanies();
     };
+
+    $scope.getCompanies = function() {
+      $http.get('/api/companies').success(function(companies) {
+        $scope.companies = companies;
+      });
+    };
+
+    $scope.getCompanies();
   });

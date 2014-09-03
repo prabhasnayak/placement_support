@@ -71,6 +71,18 @@ angular.module('collegeApp')
           }.bind(this)).$promise;
       },
 
+      createAdmin: function(user, callback) {
+        var cb = callback || angular.noop;
+
+        return User.save(user,
+          function(data) {
+            return cb(user);
+          },
+          function(err) {
+            return cb(err);
+          }.bind(this)).$promise;
+      },
+
       /**
        * Change password
        *
@@ -134,6 +146,15 @@ angular.module('collegeApp')
        */
       isAdmin: function() {
         return currentUser.role === 'admin';
+      },
+
+      /**
+       * Check if a user is a college admin
+       *
+       * @return {Boolean}
+       */
+      isCollegeAdmin: function() {
+        return currentUser.role === 'college_admin';
       },
 
       /**

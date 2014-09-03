@@ -3,8 +3,12 @@
 angular.module('collegeApp')
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/admin', {
+      .when('/admins', {
         templateUrl: 'app/admin/admin.html',
+        controller: 'AdminCtrl'
+      })
+      .when('/add_college', {
+        templateUrl: 'app/admin/add_college.html',
         controller: 'AdminCtrl'
       });
   });

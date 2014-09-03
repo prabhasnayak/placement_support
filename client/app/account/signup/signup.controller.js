@@ -12,7 +12,8 @@ angular.module('collegeApp')
         Auth.createUser({
           name: $scope.user.name,
           email: $scope.user.email,
-          password: $scope.user.password
+          password: $scope.user.password,
+          role: 'user'
         })
         .then( function() {
           // Account created, redirect to home
